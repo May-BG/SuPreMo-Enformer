@@ -59,7 +59,7 @@ python streamlined_SuPreMo.py \
     --file "skin_melanoma_DEL_part_$1.out" \
     --get_Enformer_scores \
 --selected_tracks $(awk -F'\t' '{print $NF}' target_new.txt | sort | uniq)
-```shell
+```
 
 ### Command-Line Arguments
 --file: name of outputs. \
