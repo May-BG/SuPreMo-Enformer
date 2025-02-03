@@ -21,12 +21,10 @@ Optionally, the predicted maps or disruption score tracks along those maps can a
 - [Introduction](#introduction)
 - [Features](#features)
 - [Installation](#installation)
-- [Usage](#usage)
+- [Usage](#Usage)
 - [Data Requirements and Preprocessing](#data-requirements-and-preprocessing)
-- [Model Architecture](#model-architecture)
-- [Training and Evaluation](#training-and-evaluation)
+- [Output Format](#output_format)
 - [Examples and Tutorials](#examples-and-tutorials)
-- [Contributing](#contributing)
 - [Citation and References](#citation-and-references)
 - [License](#license)
 - [Contact and Support](#contact-and-support)
@@ -42,8 +40,9 @@ Optionally, the predicted maps or disruption score tracks along those maps can a
 - **Enhanced interpretability:** Provides insights into genomic regulatory mechanisms.
 
 ## Installation
-### System Requirements
-conda create supremo_enformer.yml
+### Create conda environment
+conda env create -f supremo_enformer.yml \
+conda activate supremo_enformer_env
 
 ### Installation Steps
 1. **Clone the repository:**
@@ -52,17 +51,25 @@ conda create supremo_enformer.yml
    cd supremo_enformer
 
 
-## Run the Python script with the specified arguments
+## Usage
+```shell
 python streamlined_SuPreMo.py \
     "$data_dir$vcf_file" \
     --dir "$data_dir/results" \
     --file "skin_melanoma_DEL_part_$1.out" \
     --get_Enformer_scores \
 --selected_tracks $(awk -F'\t' '{print $NF}' target_new.txt | sort | uniq)
-
+```shell
 
 ### Command-Line Arguments
---file: name of outputs.
---dir: Directory to save results.
---selected_tracks: (Optional) Path to the selected track names from Enformer.
+--file: name of outputs. \
+--dir: Directory to save results. \
+--selected_tracks: (Optional) Path to the selected track names from Enformer. \
 --get_Enformer_scores: required.
+
+## data-requirements-and-preprocessing
+- VCF file
+    * following [vcf 4.1/4.2 specifications](https://samtools.github.io/hts-specs/VCFv4.1.pdf)
+- TXT file
+    * Columns required for simple variants: CHROM, POS, REF, ALT
+    * Columns required for structural variants: CHROM, POS, REF, ALT, END, SVTYPE (SV type), SVLEN (SV length)
