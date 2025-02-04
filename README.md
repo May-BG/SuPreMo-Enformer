@@ -7,10 +7,8 @@ The sequences are accompanied by the relative position of the perturbation for e
 The perturbation is by default centered in the sequence, if possible, unless the user provides a shifting parameter.
 SuPreMo-Enformer: Get the disruption scores of gene expression and transcription factor binding using the Enformer model
 
-SuPreMo-Enformer generates disruption scores by comparing contact frequency maps predicted from the reference and alternate sequences.
-The maps are accompanied by the relative position of the perturbation and the start coordinate that the predicted maps correspond to.
-The perturbation is by default centered in the map, if possible, unless the user provides a shifting parameter.
-Optionally, the predicted maps or disruption score tracks along those maps can also be outputted.
+SuPreMo-Enformer generates disruption scores by comparing RNA-seq, ChIP-seq, CAGE-seq and DNASE tracks predicted from the reference and alternate sequences.
+
 # Supremo Enformer
 
 [![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)](link-to-build-status)
