@@ -71,3 +71,26 @@ python streamlined_SuPreMo.py \
 - TXT file
     * Columns required for simple variants: CHROM, POS, REF, ALT
     * Columns required for structural variants: CHROM, POS, REF, ALT, END, SVTYPE (SV type), SVLEN (SV length)
+ 
+```shell
+python /pollard/data/projects/xzhang/tcga/SuPreMo/enformer/SuPreMo-enformer/manual_load_enformer_scripts/streamlined_SuPreMo.py VARIANT_FILE --dir OUTPUT_DIRECTORY --file OUTPUT_NAME --get_Enformer_scores --cell_type CELL_TYPE_FROM_TARGET_FILE --protocol ATAC/CHIP/CAGE/DNASE
+```
+Note: Replace the words in ALL CAPS with custom values:
+- VARIANT_FILE: Path to your variant file (e.g., /pollard/data/projects/xzhang/tcga/del_100.txt).
+- OUTPUT_DIRECTORY: Directory for saving output (e.g., /pollard/data/projects/xzhang/tcga).
+- OUTPUT_NAME: Name for the output file (e.g., del_100_new.out).
+--get_Enformer_scores: Use this flag as-is if you want Enformer scores.
+--cell_type CELL_TYPE_FROM_TARGET_FILE: Replace with the cell type from targets_human.txt (e.g., "K562").
+--protocol ATAC/CHIP/CAGE/DNASE: Specify the protocol, such as ATAC, CHIP, CAGE, or DNASE.
+* Conditional Argument:
+If --protocol is CHIP, add the --binding_factor argument (e.g., --binding_factor CTCF).
+If --protocol is not CHIP, do not include --binding_factor.
+
+
+### example:
+```shell
+python /pollard/data/projects/xzhang/tcga/SuPreMo/enformer/SuPreMo-enformer/manual_load_enformer_scripts/streamlined_SuPreMo.py /pollard/data/projects/xzhang/tcga/del_1.txt --dir /pollard/data/projects/xzhang/tcga --file del_1_dnase_colon.out --get_Enformer_scores --cell_type "colon epithelial cell line" --protocol DNASE
+
+```
+
+In this example, --binding_factor is omitted because --protocol is DNASE.
