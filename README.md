@@ -19,7 +19,7 @@
   
 ### **Download repo**
 ```shell
-git clone https://github.com/ketringjoni/SuPreMo.git
+git clone https://github.com/ketringjoni/SuPreMo.git](https://github.com/May-BG/SuPreMo-Enformer.git
 ```
 
 
@@ -211,7 +211,7 @@ Superscript descriptions:
 6. Method used to calculate disruption score;
 
 **SuPreMo-Enformer output**
-T.B.D.
+python scripts/streamlined_SuPreMo_multitracks.py INPUT <args>
 
 ## Tutorials
 
