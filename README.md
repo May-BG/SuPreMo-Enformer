@@ -19,7 +19,7 @@
   
 ### **Download repo**
 ```shell
-git clone https://github.com/ketringjoni/SuPreMo.git](https://github.com/May-BG/SuPreMo-Enformer.git
+git clone https://github.com/May-BG/SuPreMo-Enformer.git
 ```
 
 
